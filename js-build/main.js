@@ -8,12 +8,16 @@ function GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, c
     var last = $('.' + cl + ':last-child()');
     var nextimg = $('.' + cl + ':nth-child(' + elemCount + ') img');
     var delay = Math.floor(1000 / (numoftimes - i));
+    var undef = 0;
     if (i == numoftimes + 1) {
         var name = $(next).data('name');
         if (typeof name == 'undefined') {
             console.log('its actually undefined');
             name = $(last).data('name');
+            $('.' + cl).removeClass('--top');
             $(last).addClass('--top');
+            console.log($(last).attr('class'));
+            undef = 1;
         }
         console.log(name);
         $('.' + checkdupe + '[data-name=' + name + ']')
@@ -21,7 +25,9 @@ function GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, c
             .addClass(checkdupe + '--dupe');
     }
     var name = $(next).data('name');
-    $(prev).removeClass('--top');
+    if (undef == 0) {
+        $(prev).removeClass('--top');
+    }
     $(next).addClass('--top');
     if (elemCount < parseInt(numItems)) {
         elemCount++;

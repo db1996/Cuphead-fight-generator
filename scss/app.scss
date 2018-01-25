@@ -1,5 +1,10 @@
-$width: 80px;
-$height: 80px;
+@import 'modules/breakpoints';
+@import 'modules/mixins';
+@import 'modules/variables';
+
+@import 'components/randomizer';
+@import 'components/icon';
+
 body {
     background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=030303ff&noise=626262&density=32&opacity=17');
 }
@@ -7,52 +12,16 @@ body {
     display: flex;
     justify-content: center;
     background-color: white;
-    margin-top: 50px;
-    padding: 100px;
+    padding: 10px;
     width: 50%;
-    margin: 100px auto;
-}
-.random {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    &__imagescontainer {
-        position: relative;
-        width: $width;
-        height: $height;
-        box-sizing: content-box;
-        margin-bottom: 10px;
-        .icon_container {
-            background-color: white;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: $width;
-            height: $height;
-            overflow: hidden;
-            &--dupe {
-                display: none;
-            }
-            &--nothidden.--top {
-                overflow: visible;
-            }
-        }
-    }
-}
-.icon {
-    width: $width;
-    &--big {
-        width: $width + 20px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    @include landscape-down {
+        width: 100%;
     }
 }
 .--top {
     z-index: 5;
-}
-[data-name='Empty'] {
-    background-color: white;
 }
 .belowdiv {
     height: 25px;

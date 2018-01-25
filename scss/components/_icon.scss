@@ -1,0 +1,21 @@
+.icon-container {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    &--dupe {
+        display: none;
+    }
+    &--nothidden.--top {
+        overflow: visible;
+    }
+    &__icon {
+        width: $width;
+        &--big {
+            width: $width + 20px;
+        }
+    }
+}

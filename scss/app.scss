@@ -1,9 +1,15 @@
+@font-face {
+    font-family: GraublauWeb;
+    font-weight: bold;
+    src: url('path/GraublauWebBold.otf') format('opentype');
+}
 @import 'modules/breakpoints';
 @import 'modules/mixins';
 @import 'modules/variables';
 
 @import 'components/randomizer';
 @import 'components/icon';
+@import 'components/button';
 
 body {
     background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=030303ff&noise=626262&density=32&opacity=17');
@@ -11,7 +17,7 @@ body {
 .row {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: #d7bfa5;
     padding: 10px;
     width: 50%;
     margin: 0 auto;

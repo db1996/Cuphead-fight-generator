@@ -1,11 +1,13 @@
 .icon-container {
-    background-color: white;
     position: absolute;
     left: 0;
     top: 0;
     width: $width;
     height: $height;
     overflow: hidden;
+    &:not(.--top) {
+        display: none;
+    }
     &--dupe {
         display: none;
     }

@@ -1,0 +1,59 @@
+$width: 80px;
+$height: 80px;
+body {
+    background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=030303ff&noise=626262&density=32&opacity=17');
+}
+.row {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin-top: 50px;
+    padding: 100px;
+    width: 50%;
+    margin: 100px auto;
+}
+.random {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &__imagescontainer {
+        position: relative;
+        width: $width;
+        height: $height;
+        box-sizing: content-box;
+        margin-bottom: 10px;
+        .icon_container {
+            background-color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: $width;
+            height: $height;
+            overflow: hidden;
+            &--dupe {
+                display: none;
+            }
+            &--nothidden.--top {
+                overflow: visible;
+            }
+        }
+    }
+}
+.icon {
+    width: $width;
+    &--big {
+        width: $width + 20px;
+    }
+}
+.--top {
+    z-index: 5;
+}
+[data-name='Empty'] {
+    background-color: white;
+}
+.belowdiv {
+    height: 25px;
+}

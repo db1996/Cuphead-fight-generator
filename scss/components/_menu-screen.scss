@@ -55,7 +55,7 @@
             width: 100%;
         }
         &-title {
-            color: #3a3b3c;
+            color: rgba(#3a3b3c, 0.8);
             // text-transform: uppercase;
             font-weight: bold;
             font-size: 24px;
@@ -77,6 +77,16 @@
         top: 8px;
         width: calc(100% - 20px);
         height: calc(100% - 20px);
-        border: 2px solid #6e6595;
+        border: 2px solid #82757b;
+    }
+    &:after {
+        content: '\00a9  1930,     RANDOMIZER';
+        position: absolute;
+        color: #868372;
+        font-size: 12px;
+        z-index: 0;
+        left: 15px;
+        bottom: 15px;
+        transform: rotate(-1deg);
     }
 }

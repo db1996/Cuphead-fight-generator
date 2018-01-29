@@ -33,7 +33,7 @@
                         <div data-name="King Dice" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/king-dice.png" alt=""></div>
                         <div data-name="Devil" class="icon-container icon-container--nothidden boss"><img class="icon-container__icon--big" src="img/boss-icons/devil.png" alt=""></div>
                     </div>
-                    <button class="js-button button" data-class="boss" aria-label="boss">Generate!</button>
+                    <button class="js-button button js-boss-button" data-class="boss" aria-label="boss">Generate!</button>
                     <div class="checkbox-container"></div>
                 </div>
                 <div class="menu-screen__random">
@@ -46,7 +46,7 @@
                         <div data-name="Lobber" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/lobber.png" alt=""></div>
                         <div data-name="Charge" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/charge.png" alt=""></div>
                     </div>
-                    <button  id="temp" class="js-button button" data-check="weapon2" data-class="weapon" aria-label="weapon">Generate!</button>
+                    <button id="temp" class="js-button button js-weapon-button" data-check="weapon2" data-class="weapon" aria-label="weapon">Generate!</button>
                     <div class="checkbox-container"></div>
                 </div>
                 <div class="menu-screen__random">
@@ -58,12 +58,12 @@
                         <div data-name="Roundabout" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/roundabout.png" alt=""></div>
                         <div data-name="Lobber" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/lobber.png" alt=""></div>
                         <div data-name="Charge" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/charge.png" alt=""></div>
-                        <div data-name="Empty" class="icon-container weapon2"><img class="icon-container__icon" src="" alt=""></div>
+                        <div data-name="Empty" class="icon-container weapon2">It's Empty!</div>
                     </div>
-                    <button id="temp2" class="js-button button" data-check="weapon" data-class="weapon2" aria-label="weapon2">Generate!</button>
+                    <button id="temp2" class="js-button button js-weapon2-button" data-check="weapon" data-class="weapon2" aria-label="weapon2">Generate!</button>
                     <div class="checkbox-container">
-                        <label class="belowdiv__label" for="bosscheck">Allow empty</label>
-                        <input class="belowdiv__checkbox"  class="js-allowempty" data-class="weapon2" id="bosscheck" checked type="checkbox">
+                        <label class="checkbox-container__label" for="bosscheck">Allow empty</label>
+                        <input class="checkbox-container__checkbox"  class="js-allowempty" data-class="weapon2" id="bosscheck" checked type="checkbox">
                     </div>
                 </div>
                 <div class="menu-screen__random">
@@ -75,44 +75,51 @@
                         <div data-name="Sugar" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/sugar.png" alt=""></div>
                         <div data-name="Twin Heart" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/twin-heart.png" alt=""></div>
                         <div data-name="Whetstone" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/whetstone.png" alt=""></div>
-                        <div data-name="Empty" class="icon-container charms"><img class="icon-container__icon" src="" alt=""></div>
+                        <div data-name="Empty" class="icon-container charms">It's Empty!</div>
                     </div>
-                    <button class="js-button button" data-check="" data-class="charms" aria-label="charms">Generate!</button>
+                    <button class="js-button button js-charms-button" data-check="" data-class="charms" aria-label="charms">Generate!</button>
                     <div class="checkbox-container">
                         <label for="bosscheck">Allow empty</label>
                         <input class="js-allowempty checkbox-container__checkbox" data-class="charms" id="bosscheck" checked type="checkbox">
                     </div>
                 </div>
+                <div class="menu-screen__random">
+                    <hi class="menu-screen__random-title">Super Art</hi>
+                    <div class="menu-screen__imagescontainer">
+                        <div data-name="Super Art 1" class="icon-container super --top">Super Art I</div>
+                        <div data-name="Super Art 2" class="icon-container super">Super Art II</div>
+                        <div data-name="Super Art 3" class="icon-container super">Super Art III</div>
+                        <div data-name="Empty" class="icon-container super">It's Empty!</div>
+                    </div>
+                    <button class="js-button button js-super-button" data-check="" data-class="super" aria-label="super">Generate!</button>
+                    <div class="checkbox-container">
+                        <label for="bosscheck">Allow empty</label>
+                        <input class="js-allowempty checkbox-container__checkbox" data-class="super" id="bosscheck" checked type="checkbox">
+                    </div>
+                </div>
+                <div class="menu-screen__random">
+                    <hi class="menu-screen__random-title">Visual Mode</hi>
+                    <div class="menu-screen__imagescontainer">
+                        <div data-name="Normal" class="icon-container visual --top">Normal</div>
+                        <div data-name="Black and White" class="icon-container visual">Black and White</div>
+                        <div data-name="Two Strip" class="icon-container visual">Two Strip</div>
+                    </div>
+                    <button class="js-button button js-visual-button" data-check="" data-class="visual" aria-label="visual">Generate!</button>
+                    <div class="checkbox-container">
+                        <label for="bosscheck">Allow empty</label>
+                        <input class="js-allowempty checkbox-container__checkbox" data-class="visual" id="bosscheck" checked type="checkbox">
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- <div class="row row--notop">
-            <div class="random">
-                <hi class="title">Super Art</hi>
-                <div class="random__imagescontainer">
-                    <div data-name="art1" class="icon-container super --top"><img class="icon-container__icon" src="" alt="Super Art 1"></div>
-                    <div data-name="art2" class="icon-container super"><img class="icon-container__icon" src="" alt="Super Art 2"></div>
-                    <div data-name="art3" class="icon-container super"><img class="icon-container__icon" src="" alt="Super Art 3"></div>
-                    <div data-name="Empty" class="icon-container super"><img class="icon-container__icon" src="" alt="Empty"></div>
-                </div>
-                <button class="js-button button" data-check="" data-class="super" aria-label="super">Generate!</button>
-                <div class="belowdiv">
-                    <label for="bosscheck">Allow empty</label>
-                    <input class="js-allowempty" data-class="super" id="bosscheck" checked type="checkbox">
-                </div>
+        <!-- <div class="menu-screen">
+            <div class="menu-screen__title-card">
+                <div class="menu-screen__title">Summary</div>
             </div>
-            <div class="random">
-                <hi class="title">Visual Mode</hi>
-                <div class="random__imagescontainer">
-                    <div data-name="Normal" class="icon-container visual-mode --top">Normal</div>
-                    <div data-name="Black and White" class="icon-container visual-mode">Black And White</div>
-                    <div data-name="2 Strip" class="icon-container visual-mode">2 Strip</div>
-                </div>
-                <button class="js-button button" data-check="" data-class="visual-mode" aria-label="visual-mode">Generate!</button>
-                <div class="belowdiv">
-                </div>
+            <div class="menu-screen__row">
+
             </div>
         </div> -->
     </body>
-
     <script src="js/main.js" charset="utf-8"></script>
 </html>

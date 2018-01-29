@@ -23,6 +23,7 @@ function GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, c
         $('.' + checkdupe + '[data-name=' + name + ']')
             .removeClass(checkdupe)
             .addClass(checkdupe + '--dupe');
+        $('.js-' + checkdupe + '-button').removeClass('button--disabled');
     }
     var name = $(next).data('name');
     if (undef == 0) {
@@ -52,25 +53,27 @@ function GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, c
     }
 }
 $('.js-button').click(function() {
-    console.log('naah');
-    var checkdupe = $(this).data('check');
-    $('.' + checkdupe + '--dupe')
-        .removeClass(checkdupe + '--dupe')
-        .addClass(checkdupe);
-    var cl = $(this).data('class');
-    var numItems;
-    if ($('.' + cl + '--dupe').length > 0) {
-        numItems = $('.' + cl + '').length + 1;
-    } else {
-        numItems = $('.' + cl + '').length;
-    }
+    if (!$(this).hasClass('button--disabled')) {
+        var checkdupe = $(this).data('check');
+        $('.' + checkdupe + '--dupe')
+            .removeClass(checkdupe + '--dupe')
+            .addClass(checkdupe);
+        $('.js-' + checkdupe + '-button').addClass('button--disabled');
+        var cl = $(this).data('class');
+        var numItems;
+        if ($('.' + cl + '--dupe').length > 0) {
+            numItems = $('.' + cl + '').length + 1;
+        } else {
+            numItems = $('.' + cl + '').length;
+        }
 
-    var i = 1;
-    var numoftimes = getRndInteger(100, 300);
-    var elemCount = 1;
-    var prevElemCount = numItems;
-    console.log('num:', numItems);
-    GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, checkdupe);
+        var i = 1;
+        var numoftimes = getRndInteger(100, 300);
+        var elemCount = 1;
+        var prevElemCount = numItems;
+        console.log('num:', numItems);
+        GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, checkdupe);
+    }
 });
 $('.js-allowempty').change(function() {
     var name = $(this).data('class');

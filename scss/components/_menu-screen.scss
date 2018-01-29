@@ -8,8 +8,15 @@
     margin: 50px auto 0 auto;
     flex-wrap: wrap;
     background-image: url('../img/background-2.png');
+    @include custom-down(1450px) {
+        width: 80%;
+    }
+    @include custom-down(895px) {
+        width: 90%;
+    }
     @include landscape-down {
         width: 100%;
+        margin-top: 0px;
     }
     &__title-card {
         width: 100%;
@@ -31,7 +38,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         width: 100%;
+        z-index: 1;
     }
 
     &__random {
@@ -39,13 +48,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         width: 25%;
         text-align: center;
+        @include landscape-down {
+            width: 100%;
+        }
         &-title {
             color: #3a3b3c;
             // text-transform: uppercase;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 10px;
         }
     }
@@ -58,6 +71,7 @@
     }
     &:before {
         content: '';
+        z-index: 0;
         position: absolute;
         left: 8px;
         top: 8px;

@@ -9,6 +9,9 @@
     &:hover {
         background-color: #c27154;
     }
+    &--disabled {
+        background-color: rgba(grey, 0.5) !important;
+    }
     &:focus {
         border-color: #c27154;
         outline-color: rgba(0, 0, 0, 0);

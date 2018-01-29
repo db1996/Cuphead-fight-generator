@@ -1,16 +1,16 @@
 @font-face {
     font-family: GraublauWeb;
     font-weight: bold;
-    src: url('path/GraublauWebBold.otf') format('opentype');
+    src: url('fonts/CupheadMemphis-Medium.otf') format('opentype');
 }
 @import 'modules/breakpoints';
 @import 'modules/mixins';
 @import 'modules/variables';
 
-@import 'components/randomizer';
+@import 'components/menu-screen';
 @import 'components/icon';
 @import 'components/button';
-@import 'components/belowdiv';
+@import 'components/checkbox-container';
 
 * {
     font-family: GraublauWeb;
@@ -20,21 +20,21 @@
 body {
     background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=030303ff&noise=626262&density=32&opacity=17');
 }
-.row {
-    display: flex;
-    justify-content: center;
-    background-color: #d7bfa5;
-    padding: 10px;
-    width: 50%;
-    margin: 0 auto;
-    border: 2px solid #a07869;
-    flex-wrap: wrap;
-    @include landscape-down {
-        width: 100%;
-    }
+.page-title {
+    font-size: 28px;
+    margin: 25px 0;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 .--top {
     z-index: 5;
+}
+.--twice {
+    // width: 140%;
+    // height: 140%;
 }
 .belowdiv {
     height: 25px;

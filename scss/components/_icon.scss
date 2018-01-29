@@ -1,5 +1,8 @@
 .icon-container {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     left: 0;
     top: 0;
     width: $width;
@@ -15,6 +18,8 @@
         overflow: visible;
     }
     &__icon {
+        display: flex;
+        align-items: center;
         width: $width;
         &--big {
             width: $width + 20px;

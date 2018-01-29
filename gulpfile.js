@@ -10,7 +10,6 @@ var devip = require('dev-ip');
 var wait = require('gulp-wait');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
-
 var production = !!gutil.env.production;
 var jsmin = !!gutil.env.jsmin;
 

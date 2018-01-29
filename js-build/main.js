@@ -52,6 +52,7 @@ function GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, c
     }
 }
 $('.js-button').click(function() {
+    console.log('naah');
     var checkdupe = $(this).data('check');
     $('.' + checkdupe + '--dupe')
         .removeClass(checkdupe + '--dupe')

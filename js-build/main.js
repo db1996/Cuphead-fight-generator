@@ -36,6 +36,8 @@ function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe) {
                 .addClass(checkdupe + '--dupe');
             $('.js-' + checkdupe + '-button').removeClass('button--disabled');
         }
+        // Adds the text to the summary
+        $('.js-' + cl + '-summary-text').html(name);
     }
 }
 $('.js-button').click(function() {

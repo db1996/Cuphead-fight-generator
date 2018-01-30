@@ -1,45 +1,3 @@
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe) {
-    // Disables the button for the checked class.
-    var currentElem = $('.' + cl + ':eq(' + (elemCount - 1) + ')');
-    var nextElem = $('.' + cl + ':eq(' + elemCount + ')');
-    var delay = Math.floor(500 / (numoftimes - count));
-    var name = $(nextElem).data('name');
-    $(currentElem).removeClass('--top');
-    $(nextElem).addClass('--top');
-    // Rotates between the elements
-    if (elemCount < numItems) {
-        elemCount++;
-    } else if (elemCount == numItems) {
-        elemCount = 0;
-    }
-
-    if (count < numoftimes) {
-        // if the loop is not over it starts again, giving the updated data
-        count++;
-        setTimeout(function() {
-            GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe);
-        }, delay);
-    } else if (count == numoftimes) {
-        // If the cycle is all done this happens
-        // If there should be checked for duplicates it is done there
-        if (
-            typeof checkdupe != 'undefined' &&
-            typeof checkdupe != 'null' &&
-            typeof checkdupe != 'object' &&
-            checkdupe != ''
-        ) {
-            $('.' + checkdupe + '[data-name=' + name + ']')
-                .removeClass(checkdupe)
-                .addClass(checkdupe + '--dupe');
-            $('.js-' + checkdupe + '-button').removeClass('button--disabled');
-        }
-        // Adds the text to the summary
-        $('.js-' + cl + '-summary-text').html(name);
-    }
-}
 $('.js-button').click(function() {
     // If the button is disabled this does nothing
     if (!$(this).hasClass('button--disabled')) {
@@ -75,4 +33,40 @@ $('.js-allowspecific').change(function() {
             $('.' + name + ':eq(0)').addClass('--top');
         }
     }
+});
+$('.js-generate-kd').click(function() {
+    // Creates a random value from 4-9
+    var totalAmount = getRndInteger(4, 10);
+    var numbersArray = [];
+    // Creates 3 numbers first, because there needs to be one for each block
+    var num = getRndInteger(1, 4);
+    numbersArray.push(num);
+    num = getRndInteger(4, 7);
+    numbersArray.push(num);
+    num = getRndInteger(7, 10);
+    numbersArray.push(num);
+    totalAmount = totalAmount - 3; // Deducts the total amount
+    // Now it makes a new number between 1-9 for the remainder amount. Checking for doubles
+    for (var i = 1; i <= totalAmount; i++) {
+        var success = 0;
+        var newnum;
+        do {
+            newnum = getRndInteger(1, 10);
+            if ($.inArray(newnum, numbersArray) == -1) {
+                numbersArray.push(newnum);
+                success = 1;
+            }
+        } while (success == 0);
+    }
+    numbersArray.sort();
+
+    var imgsource = returnImgsource(numbersArray[0]);
+    var delay = 1000;
+    $('#js-toCopy').attr('src', imgsource);
+    setTimeout(function() {
+        $('#js-toCopy').addClass('king-dice-group__image--visible');
+    }, 10);
+    setTimeout(function() {
+        generateMiniBosses(numbersArray, 1, delay);
+    }, delay);
 });

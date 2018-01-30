@@ -51,6 +51,11 @@
         flex-wrap: wrap;
         width: 100%;
         z-index: 1;
+        &--left {
+            // justify-content: flex-start;
+            flex-direction: column;
+            width: 70%;
+        }
     }
 
     &__random {

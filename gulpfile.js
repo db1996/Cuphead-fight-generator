@@ -81,10 +81,13 @@ gulp.task('reload-img', function() {
 gulp.task('build-js', function() {
     return gulp
         .src(srcs.js)
-        .pipe(jsmin === true ? gutil.noop() : sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(concat(filenames.js))
-        .pipe(jsmin === true ? uglify().on('error', gutil.log) : gutil.noop())
-        .pipe(jsmin === true ? gutil.noop() : sourcemaps.write())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(dests.js))
+        .pipe(browserSync.reload({ stream: true }))
+        .pipe(production === true ? rename({ extname: '.min.js' }) : gutil.noop())
+        .pipe(production === true ? uglify().on('error', gutil.log) : gutil.noop())
         .pipe(gulp.dest(dests.js))
         .pipe(browserSync.reload({ stream: true }));
 });

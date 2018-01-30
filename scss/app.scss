@@ -6,15 +6,16 @@
 @import 'modules/breakpoints';
 @import 'modules/mixins';
 @import 'modules/variables';
+@import 'modules/typography';
 
 @import 'components/menu-screen';
 @import 'components/icon';
 @import 'components/button';
 @import 'components/checkbox-container';
+@import 'components/summary';
 
 * {
     font-family: GraublauWeb;
-    font-size: 18px;
     color: #4c4c4c;
 }
 body {
@@ -23,27 +24,6 @@ body {
     margin-right: 20px;
     padding: 0;
 }
-.page-title {
-    font-size: 28px;
-    margin: 25px 0;
-}
-.title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
 .--top {
     z-index: 5;
-}
-.--twice {
-    // width: 140%;
-    // height: 140%;
-}
-.belowdiv {
-    height: 25px;
-}
-h1 {
-    margin: 0 auto;
-    text-align: center;
-    color: white;
 }

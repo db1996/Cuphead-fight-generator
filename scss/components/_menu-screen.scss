@@ -4,12 +4,19 @@
     justify-content: center;
     background-color: #d7bfa5;
     padding: 10px;
+    padding-bottom: 30px;
     width: 50%;
     margin: 50px auto 0 auto;
     flex-wrap: wrap;
     background-image: url('../img/background-2.png');
     @include laptop-up {
         transform: rotate(-1deg);
+        &--opposite {
+            transform: rotate(0.2deg);
+            &:after {
+                transform: rotate(-2deg);
+            }
+        }
     }
     @include custom-down(1450px) {
         width: 80%;
@@ -20,6 +27,9 @@
     @include landscape-down {
         width: 100%;
         margin-top: 0px;
+        &:not(.menu-screen--opposite) {
+            margin-bottom: 25px;
+        }
     }
     &__title-card {
         width: 100%;
@@ -29,12 +39,9 @@
         justify-content: center;
         background-image: url('../img/background-title.png');
         margin-bottom: 20px;
-    }
-    &__title {
-        color: #d3c0af;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 32px;
+        &--nomargin-bot {
+            margin-bottom: 0;
+        }
     }
 
     &__row {
@@ -51,18 +58,13 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        width: 25%;
         text-align: center;
+        flex-grow: 1;
         @include landscape-down {
-            width: 100%;
+            // width: 100%;
         }
-        &-title {
-            color: rgba(#3a3b3c, 0.8);
-            // text-transform: uppercase;
-            font-weight: bold;
-            font-size: 24px;
-            margin-bottom: 10px;
+        &:not(:last-child) {
+            padding: 0 30px;
         }
     }
     &__imagescontainer {
@@ -83,13 +85,13 @@
         border: 2px solid #82757b;
     }
     &:after {
-        content: '\00a9  1930,     RANDOMIZER';
+        content: '\00a9  1930, RANDOMIZER';
         position: absolute;
         color: #868372;
         font-size: 12px;
         z-index: 0;
         left: 15px;
         bottom: 15px;
-        transform: rotate(1deg);
+        transform: rotate(2deg);
     }
 }

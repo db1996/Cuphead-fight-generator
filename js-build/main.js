@@ -4,27 +4,41 @@ function getRndInteger(min, max) {
 function GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, checkdupe) {
     var prev = $('.' + cl + ':nth-child(' + prevElemCount + ')');
     var previmg = $('.' + cl + ':nth-child(' + prevElemCount + ') img');
-    var next = $('.' + cl + ':nth-child(' + elemCount + ')');
+    var next;
+    if (elemCount == 1) {
+        next = $('.' + cl + ':first-child');
+    } else {
+        next = $('.' + cl + ':nth-child(' + elemCount + ')');
+    }
     var last = $('.' + cl + ':last-child()');
     var nextimg = $('.' + cl + ':nth-child(' + elemCount + ') img');
+    var lastimg = $('.' + cl + ':last-child() img');
     var delay = Math.floor(1000 / (numoftimes - i));
+    var toreplace = $('.js-' + cl + '-summary-text');
     var undef = 0;
     if (i == numoftimes + 1) {
+        // What happens if the cycle is completed
         var name = $(next).data('name');
         if (typeof name == 'undefined') {
-            console.log('its actually undefined');
-            name = $(last).data('name');
+            name = $('.' + cl + ':last-child()').data('name');
             $('.' + cl).removeClass('--top');
             $(last).addClass('--top');
-            console.log($(last).attr('class'));
             undef = 1;
         }
-        console.log(name);
-        $('.' + checkdupe + '[data-name=' + name + ']')
-            .removeClass(checkdupe)
-            .addClass(checkdupe + '--dupe');
-        $('.js-' + checkdupe + '-button').removeClass('button--disabled');
+        if (
+            typeof checkdupe != 'undefined' &&
+            typeof checkdupe != 'null' &&
+            typeof checkdupe != 'object' &&
+            checkdupe != ''
+        ) {
+            $('.' + checkdupe + '[data-name=' + name + ']')
+                .removeClass(checkdupe)
+                .addClass(checkdupe + '--dupe');
+            $('.js-' + checkdupe + '-button').removeClass('button--disabled');
+        }
+        $(toreplace).html(name);
     }
+
     var name = $(next).data('name');
     if (undef == 0) {
         $(prev).removeClass('--top');
@@ -68,25 +82,22 @@ $('.js-button').click(function() {
         }
 
         var i = 1;
-        var numoftimes = getRndInteger(100, 300);
+        var numoftimes = getRndInteger(10, 30);
         var elemCount = 1;
         var prevElemCount = numItems;
-        console.log('num:', numItems);
         GenerateRandom(cl, numItems, i, numoftimes, elemCount, prevElemCount, checkdupe);
     }
 });
-$('.js-allowempty').change(function() {
+$('.js-allowspecific').change(function() {
     var name = $(this).data('class');
+    var tocheck = $(this).data('nametocheck');
     if ($(this).is(':checked')) {
-        $('.' + name + '--not-allowed[data-name=Empty]')
+        $('.' + name + '--not-allowed[data-name=' + tocheck + ']')
             .addClass(name)
             .removeClass(name + '--not-allowed');
-
-        console.log(name + ' is checked');
     } else {
-        $('.' + name + '[data-name=Empty]')
+        $('.' + name + '[data-name=' + tocheck + ']')
             .removeClass(name)
             .addClass(name + '--not-allowed');
-        console.log(name + ' is unchecked');
     }
 });

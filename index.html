@@ -1,125 +1,158 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <link rel="stylesheet" href="css/app.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <div class="menu-screen">
-            <div class="menu-screen__title-card">
-                <div class="menu-screen__title">randomize your fight</div>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="menu-screen">
+        <div class="menu-screen__title-card">
+            <h1>randomize your fight</h1>
+        </div>
+        <div class="menu-screen__row">
+            <div class="menu-screen__random">
+                <h2>Boss fight</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Botanic Panic" class="icon-container boss --top"><img class="icon-container__icon" src="img/boss-icons/botanic-panic.png" alt=""></div>
+                    <div data-name="Ruse of an Ooze" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/ruse-of-an-ooze.png" alt=""></div>
+                    <div data-name="Clip Joint Calamity" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/clip-joint-calamity.png" alt=""></div>
+                    <div data-name="Floral Fury" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/floral-fury.png" alt=""></div>
+                    <div data-name="Carnival Kerfuffle" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/carnival-kerfuffle.png" alt=""></div>
+                    <div data-name="Sugarland Shimmy" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/sugarland-shimmy.png" alt=""></div>
+                    <div data-name="Fiery Frolic" class="icon-container boss icon-container--nothidden"><img class="icon-container__icon--big" src="img/boss-icons/fiery-frolic.png" alt=""></div>
+                    <div data-name="Honeycomb Herald" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/honeycomb-herald.png" alt=""></div>
+                    <div data-name="Murine Corps" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/murine-corps.png" alt=""></div>
+                    <div data-name="Dramatic Frantic" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/dramatic-frantic.png" alt=""></div>
+                    <div data-name="Shootin N' Lootin" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/shootin-n-lootin.png" alt=""></div>
+                    <div data-name="Railroad Wrath" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/railroad-wrath.png" alt=""></div>
+                    <div data-name="King Dice" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/king-dice.png" alt=""></div>
+                    <div data-name="Devil" class="icon-container icon-container--nothidden boss"><img class="icon-container__icon--big" src="img/boss-icons/devil.png" alt=""></div>
+                </div>
+                <button class="js-button button js-boss-button" data-class="boss" aria-label="boss">Generate!</button>
+                <div class="checkbox-container"></div>
             </div>
-            <div class="menu-screen__row">
-                <div class="menu-screen__random">
-                    <hi class="menu-screen__random-title">Boss fight</hi>
-                    <div class="menu-screen__imagescontainer">
-                        <div data-name="Botanic Panic" class="icon-container boss --top"><img class="icon-container__icon" src="img/boss-icons/botanic-panic.png" alt=""></div>
-                        <div data-name="Ruse of an Ooze" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/ruse-of-an-ooze.png" alt=""></div>
-                        <div data-name="Clip Joint Calamity" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/clip-joint-calamity.png" alt=""></div>
-                        <div data-name="Floral Fury" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/floral-fury.png" alt=""></div>
-                        <div data-name="Carnival Kerfuffle" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/carnival-kerfuffle.png" alt=""></div>
-                        <div data-name="Sugarland Shimmy" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/sugarland-shimmy.png" alt=""></div>
-                        <div data-name="Fiery Frolic" class="icon-container boss icon-container--nothidden"><img class="icon-container__icon--big" src="img/boss-icons/fiery-frolic.png" alt=""></div>
-                        <div data-name="Honeycomb Herald" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/honeycomb-herald.png" alt=""></div>
-                        <div data-name="Murine Corps" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/murine-corps.png" alt=""></div>
-                        <div data-name="Dramatic Frantic" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/dramatic-frantic.png" alt=""></div>
-                        <div data-name="Shootin N' Lootin" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/shootin-n-lootin.png" alt=""></div>
-                        <div data-name="Railroad Wrath" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/railroad-wrath.png" alt=""></div>
-                        <div data-name="King Dice" class="icon-container boss"><img class="icon-container__icon" src="img/boss-icons/king-dice.png" alt=""></div>
-                        <div data-name="Devil" class="icon-container icon-container--nothidden boss"><img class="icon-container__icon--big" src="img/boss-icons/devil.png" alt=""></div>
-                    </div>
-                    <button class="js-button button js-boss-button" data-class="boss" aria-label="boss">Generate!</button>
-                    <div class="checkbox-container"></div>
+            <div class="menu-screen__random">
+                <h2>Primary</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Peashooter" class="icon-container weapon --top"><img class="icon-container__icon" src="img/weapon-icons/peashooter.png" alt=""></div>
+                    <div data-name="Spread" class="icon-container weapon--dupe"><img class="icon-container__icon" src="img/weapon-icons/spread.png" alt=""></div>
+                    <div data-name="Chaser" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/chaser.png" alt=""></div>
+                    <div data-name="Roundabout" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/roundabout.png" alt=""></div>
+                    <div data-name="Lobber" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/lobber.png" alt=""></div>
+                    <div data-name="Charge" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/charge.png" alt=""></div>
                 </div>
-                <div class="menu-screen__random">
-                    <hi class="menu-screen__random-title">Primary Weapon</hi>
-                    <div class="menu-screen__imagescontainer">
-                        <div data-name="Peashooter" class="icon-container weapon --top"><img class="icon-container__icon" src="img/weapon-icons/peashooter.png" alt=""></div>
-                        <div data-name="Spread" class="icon-container weapon--dupe"><img class="icon-container__icon" src="img/weapon-icons/spread.png" alt=""></div>
-                        <div data-name="Chaser" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/chaser.png" alt=""></div>
-                        <div data-name="Roundabout" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/roundabout.png" alt=""></div>
-                        <div data-name="Lobber" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/lobber.png" alt=""></div>
-                        <div data-name="Charge" class="icon-container weapon"><img class="icon-container__icon" src="img/weapon-icons/charge.png" alt=""></div>
-                    </div>
-                    <button id="temp" class="js-button button js-weapon-button" data-check="weapon2" data-class="weapon" aria-label="weapon">Generate!</button>
-                    <div class="checkbox-container"></div>
+                <button id="temp" class="js-button button js-weapon-button" data-check="weapon2" data-class="weapon" aria-label="weapon">Generate!</button>
+                <div class="checkbox-container"></div>
+            </div>
+            <div class="menu-screen__random">
+                <h2>Secondary</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Peashooter" class="icon-container weapon2--dupe"><img class="icon-container__icon" src="img/weapon-icons/peashooter.png" alt=""></div>
+                    <div data-name="Spread" class="icon-container weapon2 --top"><img class="icon-container__icon" src="img/weapon-icons/spread.png" alt=""></div>
+                    <div data-name="Chaser" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/chaser.png" alt=""></div>
+                    <div data-name="Roundabout" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/roundabout.png" alt=""></div>
+                    <div data-name="Lobber" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/lobber.png" alt=""></div>
+                    <div data-name="Charge" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/charge.png" alt=""></div>
+                    <div data-name="Empty" class="icon-container weapon2">It's Empty!</div>
                 </div>
-                <div class="menu-screen__random">
-                    <hi class="menu-screen__random-title">Secondary Weapon</hi>
-                    <div class="menu-screen__imagescontainer">
-                        <div data-name="Peashooter" class="icon-container weapon2--dupe"><img class="icon-container__icon" src="img/weapon-icons/peashooter.png" alt=""></div>
-                        <div data-name="Spread" class="icon-container weapon2 --top"><img class="icon-container__icon" src="img/weapon-icons/spread.png" alt=""></div>
-                        <div data-name="Chaser" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/chaser.png" alt=""></div>
-                        <div data-name="Roundabout" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/roundabout.png" alt=""></div>
-                        <div data-name="Lobber" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/lobber.png" alt=""></div>
-                        <div data-name="Charge" class="icon-container weapon2"><img class="icon-container__icon" src="img/weapon-icons/charge.png" alt=""></div>
-                        <div data-name="Empty" class="icon-container weapon2">It's Empty!</div>
-                    </div>
-                    <button id="temp2" class="js-button button js-weapon2-button" data-check="weapon" data-class="weapon2" aria-label="weapon2">Generate!</button>
-                    <div class="checkbox-container">
-                        <label class="checkbox-container__label" for="bosscheck">Allow empty</label>
-                        <input class="checkbox-container__checkbox"  class="js-allowempty" data-class="weapon2" id="bosscheck" checked type="checkbox">
-                    </div>
+                <button id="temp2" class="js-button button js-weapon2-button" data-check="weapon" data-class="weapon2" aria-label="weapon2">Generate!</button>
+                <div class="checkbox-container">
+                    <label class="checkbox-container__label" for="bosscheck">Allow empty</label>
+                    <input class="checkbox-container__checkbox js-allowspecific" data-nametocheck="Empty" data-class="weapon2" id="bosscheck" checked type="checkbox">
                 </div>
-                <div class="menu-screen__random">
-                    <hi class="menu-screen__random-title">Charm</hi>
-                    <div class="menu-screen__imagescontainer">
-                        <div data-name="Smoke Bomb" class="icon-container charms --top"><img class="icon-container__icon" src="img/charms-icons/smoke-bomb.png" alt=""></div>
-                        <div data-name="Heart" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/heart.png" alt=""></div>
-                        <div data-name="Coffee" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/coffee.png" alt=""></div>
-                        <div data-name="Sugar" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/sugar.png" alt=""></div>
-                        <div data-name="Twin Heart" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/twin-heart.png" alt=""></div>
-                        <div data-name="Whetstone" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/whetstone.png" alt=""></div>
-                        <div data-name="Empty" class="icon-container charms">It's Empty!</div>
-                    </div>
-                    <button class="js-button button js-charms-button" data-check="" data-class="charms" aria-label="charms">Generate!</button>
-                    <div class="checkbox-container">
-                        <label for="bosscheck">Allow empty</label>
-                        <input class="js-allowempty checkbox-container__checkbox" data-class="charms" id="bosscheck" checked type="checkbox">
-                    </div>
+            </div>
+            <div class="menu-screen__random">
+                <h2>Charm</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Smoke Bomb" class="icon-container charms --top"><img class="icon-container__icon" src="img/charms-icons/smoke-bomb.png" alt=""></div>
+                    <div data-name="Heart" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/heart.png" alt=""></div>
+                    <div data-name="Coffee" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/coffee.png" alt=""></div>
+                    <div data-name="Sugar" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/sugar.png" alt=""></div>
+                    <div data-name="Twin Heart" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/twin-heart.png" alt=""></div>
+                    <div data-name="Whetstone" class="icon-container charms"><img class="icon-container__icon" src="img/charms-icons/whetstone.png" alt=""></div>
+                    <div data-name="Empty" class="icon-container charms">It's Empty!</div>
                 </div>
-                <div class="menu-screen__random">
-                    <hi class="menu-screen__random-title">Super Art</hi>
-                    <div class="menu-screen__imagescontainer">
-                        <div data-name="Super Art 1" class="icon-container super --top">Super Art I</div>
-                        <div data-name="Super Art 2" class="icon-container super">Super Art II</div>
-                        <div data-name="Super Art 3" class="icon-container super">Super Art III</div>
-                        <div data-name="Empty" class="icon-container super">It's Empty!</div>
-                    </div>
-                    <button class="js-button button js-super-button" data-check="" data-class="super" aria-label="super">Generate!</button>
-                    <div class="checkbox-container">
-                        <label for="bosscheck">Allow empty</label>
-                        <input class="js-allowempty checkbox-container__checkbox" data-class="super" id="bosscheck" checked type="checkbox">
-                    </div>
+                <button class="js-button button js-charms-button" data-check="" data-class="charms" aria-label="charms">Generate!</button>
+                <div class="checkbox-container">
+                    <label for="bosscheck">Allow empty</label>
+                    <input class="js-allowspecific checkbox-container__checkbox" data-nametocheck='Empty' data-class="charms" id="bosscheck" checked type="checkbox">
                 </div>
-                <div class="menu-screen__random">
-                    <hi class="menu-screen__random-title">Visual Mode</hi>
-                    <div class="menu-screen__imagescontainer">
-                        <div data-name="Normal" class="icon-container visual --top">Normal</div>
-                        <div data-name="Black and White" class="icon-container visual">Black and White</div>
-                        <div data-name="Two Strip" class="icon-container visual">Two Strip</div>
-                    </div>
-                    <button class="js-button button js-visual-button" data-check="" data-class="visual" aria-label="visual">Generate!</button>
-                    <div class="checkbox-container">
-                        <label for="bosscheck">Allow empty</label>
-                        <input class="js-allowempty checkbox-container__checkbox" data-class="visual" id="bosscheck" checked type="checkbox">
-                    </div>
+            </div>
+            <div class="menu-screen__random">
+                <h2>Super Art</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Super Art 1" class="icon-container super --top">Super Art I</div>
+                    <div data-name="Super Art 2" class="icon-container super">Super Art II</div>
+                    <div data-name="Super Art 3" class="icon-container super">Super Art III</div>
+                    <div data-name="Empty" class="icon-container super">It's Empty!</div>
+                </div>
+                <button class="js-button button js-super-button" data-check="" data-class="super" aria-label="super">Generate!</button>
+                <div class="checkbox-container">
+                    <label for="bosscheck">Allow empty</label>
+                    <input class="js-allowspecific checkbox-container__checkbox" data-nametocheck="Empty" data-class="super" id="bosscheck" checked type="checkbox">
+                </div>
+            </div>
+            <div class="menu-screen__random">
+                <h2>Difficulty</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Simple" class="icon-container difficulty "><p>Simple</p></div>
+                    <div data-name="Regular" class="icon-container difficulty --top"><p>Regular</p></div>
+                    <div data-name="Expert" class="icon-container difficulty "><p>Expert</p></div>
+                </div>
+                <button class="js-button button js-super-button" data-check="" data-class="difficulty" aria-label="difficulty">Generate!</button>
+                <div class="checkbox-container">
+                    <label for="bosscheck">Allow simple</label>
+                    <input  class="js-allowspecific checkbox-container__checkbox" data-nametocheck="Simple" data-class="difficulty" id="bosscheck" checked type="checkbox">
+                </div>
+            </div>
+            <div class="menu-screen__random">
+                <h2>Visual Mode</h2>
+                <div class="menu-screen__imagescontainer">
+                    <div data-name="Normal" class="icon-container visual "><img class="icon-container__icon" src="img/visualmodes-icons/normal.png" alt=""></div>
+                    <div data-name="Black and White" class="icon-container visual"><img class="icon-container__icon" src="img/visualmodes-icons/black-and-white.png" alt=""></div>
+                    <div data-name="Two Strip" class="icon-container visual --top"><img class="icon-container__icon" src="img/visualmodes-icons/two-strip.png" alt=""></div>
+                </div>
+                <button class="js-button button js-visual-button" data-check="" data-class="visual" aria-label="visual">Generate!</button>
+                <div class="checkbox-container">
                 </div>
             </div>
         </div>
-        <!-- <div class="menu-screen">
-            <div class="menu-screen__title-card">
-                <div class="menu-screen__title">Summary</div>
+    </div>
+    <div class="menu-screen menu-screen--opposite">
+        <div class="menu-screen__title-card menu-screen__title-card--nomargin-bot">
+            <h1>Summary</h1>
+        </div>
+        <div class="menu-screen__row  ">
+            <div class="kd-bg"></div>
+            <div class="summary">
+                <div class="summary__single">
+                    <h2>Boss</h2>
+                    <p class="js-boss-summary-text">whetstone</p>
+                </div>
+                <div class="summary__single summary__single--double">
+                    <h2>Weapons</h2>
+                    <div class="summary__images">
+                        <p class="js-weapon-summary-text">whetstone</p>
+                        <span> + </span>
+                        <p class="js-weapon2-summary-text">whetstone</p>
+                    </div>
+                </div>
+                <div class="summary__single">
+                    <h2>Charm</h2>
+                    <p class="js-charms-summary-text">whetstone</p>
+                </div>
+                <div class="summary__single">
+                    <h2>Super</h2>
+                    <p class="js-super-summary-text">whetstone</p>
+                </div>
             </div>
-            <div class="menu-screen__row">
-
-            </div>
-        </div> -->
-    </body>
-    <script src="js/main.js" charset="utf-8"></script>
+        </div>
+    </div>
+</body>
+<script src="js/main.js" charset="utf-8"></script>
 </html>

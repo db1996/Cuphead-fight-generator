@@ -94,6 +94,7 @@ function generateMiniBosses(numbers, count, delay) {
         .appendTo('#js-toAppend')
         .attr('id', randomstr)
         .attr('src', returnImgsource(numbers[count]))
+        .addClass('js-to-delete')
         .removeClass('king-dice-group__image--visible');
     setTimeout(function() {
         $('#' + randomstr).addClass('king-dice-group__image--visible');

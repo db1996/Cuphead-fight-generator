@@ -62,6 +62,7 @@ $('.js-generate-kd').click(function() {
 
     var imgsource = returnImgsource(numbersArray[0]);
     var delay = 500;
+    $('.js-to-delete').remove();
     $('#js-toCopy').attr('src', imgsource);
     setTimeout(function() {
         $('#js-toCopy').addClass('king-dice-group__image--visible');

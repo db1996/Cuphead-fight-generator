@@ -1,0 +1,12 @@
+.king-dice-group {
+    &__image {
+        height: 100px;
+        transition: 0.2s ease;
+        opacity: 0;
+        // transform: scale(0.1);
+        &--visible {
+            // transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

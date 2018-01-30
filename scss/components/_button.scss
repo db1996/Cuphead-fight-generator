@@ -9,11 +9,22 @@
     &:hover {
         background-color: #c27154;
     }
-    &--disabled {
-        background-color: rgba(grey, 0.5) !important;
-    }
     &:focus {
         border-color: #c27154;
         outline-color: rgba(0, 0, 0, 0);
+    }
+    &--disabled {
+        background-color: rgba(grey, 0.5) !important;
+    }
+    &--difficulty {
+        cursor: default;
+        width: 100%;
+        border: 0;
+        padding: 15px 0;
+        background-image: url('../img/background-title.png');
+        text-align: center;
+    }
+    &__difficulty-text {
+        color: #dfdbdc;
     }
 }

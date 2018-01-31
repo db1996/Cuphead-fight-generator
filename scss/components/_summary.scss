@@ -11,6 +11,9 @@
     justify-content: center;
     width: 80%;
     margin-bottom: 0;
+    @include landscape-down {
+        flex-direction: column;
+    }
     &__single {
         display: flex;
         flex-direction: column;

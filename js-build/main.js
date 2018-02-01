@@ -35,39 +35,42 @@ $('.js-allowspecific').change(function() {
     }
 });
 $('.js-generate-kd').click(function() {
-    // Creates a random value from 4-9
-    var totalAmount = getRndInteger(4, 10);
-    var numbersArray = [];
-    // Creates 3 numbers first, because there needs to be one for each block
-    var num = getRndInteger(1, 4);
-    numbersArray.push(num);
-    num = getRndInteger(4, 7);
-    numbersArray.push(num);
-    num = getRndInteger(7, 10);
-    numbersArray.push(num);
-    totalAmount = totalAmount - 3; // Deducts the total amount
-    // Now it makes a new number between 1-9 for the remainder amount. Checking for doubles
-    for (var i = 1; i <= totalAmount; i++) {
-        var success = 0;
-        var newnum;
-        do {
-            newnum = getRndInteger(1, 10);
-            if ($.inArray(newnum, numbersArray) == -1) {
-                numbersArray.push(newnum);
-                success = 1;
-            }
-        } while (success == 0);
-    }
-    numbersArray.sort();
+    if (!$(this).hasClass('button--disabled')) {
+        $(this).addClass('button--disabled');
+        // Creates a random value from 4-9
+        var totalAmount = getRndInteger(4, 10);
+        var numbersArray = [];
+        // Creates 3 numbers first, because there needs to be one for each block
+        var num = getRndInteger(1, 4);
+        numbersArray.push(num);
+        num = getRndInteger(4, 7);
+        numbersArray.push(num);
+        num = getRndInteger(7, 10);
+        numbersArray.push(num);
+        totalAmount = totalAmount - 3; // Deducts the total amount
+        // Now it makes a new number between 1-9 for the remainder amount. Checking for doubles
+        for (var i = 1; i <= totalAmount; i++) {
+            var success = 0;
+            var newnum;
+            do {
+                newnum = getRndInteger(1, 10);
+                if ($.inArray(newnum, numbersArray) == -1) {
+                    numbersArray.push(newnum);
+                    success = 1;
+                }
+            } while (success == 0);
+        }
+        numbersArray.sort();
 
-    var imgsource = returnImgsource(numbersArray[0]);
-    var delay = 500;
-    $('.js-to-delete').remove();
-    $('#js-toCopy').attr('src', imgsource);
-    setTimeout(function() {
-        $('#js-toCopy').addClass('king-dice-group__image--visible');
-    }, 10);
-    setTimeout(function() {
-        generateMiniBosses(numbersArray, 1, delay);
-    }, delay);
+        var imgsource = returnImgsource(numbersArray[0]);
+        var delay = 500;
+        $('.js-to-delete').remove();
+        $('#js-toCopy').attr('src', imgsource);
+        setTimeout(function() {
+            $('#js-toCopy').addClass('king-dice-group__image--visible');
+        }, 10);
+        setTimeout(function() {
+            generateMiniBosses(numbersArray, 1, delay);
+        }, delay);
+    }
 });

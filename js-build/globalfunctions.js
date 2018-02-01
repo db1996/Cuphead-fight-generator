@@ -67,7 +67,14 @@ function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe) {
         // if the loop is not over it starts again, giving the updated data
         count++;
         setTimeout(function() {
-            GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe);
+            GenerateRandom(
+                cl,
+                numItems,
+                count,
+                elemCount,
+                numoftimes,
+                checkdupe
+            );
         }, delay);
     } else if (count == numoftimes) {
         // If the cycle is all done this happens
@@ -104,5 +111,7 @@ function generateMiniBosses(numbers, count, delay) {
         setTimeout(function() {
             generateMiniBosses(numbers, count, delay);
         }, delay);
+    } else {
+        $('.js-generate-kd').removeClass('button--disabled');
     }
 }

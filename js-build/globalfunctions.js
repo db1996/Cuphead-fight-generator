@@ -48,7 +48,7 @@ function randomString2(len, beforestr = '', arraytocheck = null) {
         }
     }
 }
-function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe) {
+function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe, elem) {
     // Disables the button for the checked class.
     var currentElem = $('.' + cl + ':eq(' + (elemCount - 1) + ')');
     var nextElem = $('.' + cl + ':eq(' + elemCount + ')');
@@ -62,19 +62,11 @@ function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe) {
     } else if (elemCount == numItems) {
         elemCount = 0;
     }
-
     if (count < numoftimes) {
         // if the loop is not over it starts again, giving the updated data
         count++;
         setTimeout(function() {
-            GenerateRandom(
-                cl,
-                numItems,
-                count,
-                elemCount,
-                numoftimes,
-                checkdupe
-            );
+            GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe, elem);
         }, delay);
     } else if (count == numoftimes) {
         // If the cycle is all done this happens
@@ -92,6 +84,8 @@ function GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe) {
         }
         // Adds the text to the summary
         $('.js-' + cl + '-summary-text').html(name);
+        console.log(elem);
+        $(elem).removeClass('button--disabled');
     }
 }
 function generateMiniBosses(numbers, count, delay) {

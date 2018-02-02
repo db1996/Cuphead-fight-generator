@@ -1,6 +1,7 @@
 $('.js-button').click(function() {
     // If the button is disabled this does nothing
     if (!$(this).hasClass('button--disabled')) {
+        $(this).addClass('button--disabled');
         // Gets the data attribute "check" to see which one needs to be checked for duplicates
         var checkdupe = $(this).data('check');
         $('.' + checkdupe + '--dupe')
@@ -12,7 +13,7 @@ $('.js-button').click(function() {
         var count = 1;
         var elemCount = 0;
         var numoftimes = getRndInteger(100, 200); // Gets a random number between 2 numbers
-        GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe);
+        GenerateRandom(cl, numItems, count, elemCount, numoftimes, checkdupe, $(this));
     }
 });
 $('.js-allowspecific').change(function() {
@@ -39,6 +40,10 @@ $('.js-generate-kd').click(function() {
         $(this).addClass('button--disabled');
         // Creates a random value from 4-9
         var totalAmount = getRndInteger(4, 10);
+        for (var i = 3; i < 9; i++) {
+            $('#js-toAppend').removeClass('king-dice-group--' + i + '-item');
+        }
+        $('#js-toAppend').addClass('king-dice-group--' + totalAmount + '-item');
         var numbersArray = [];
         // Creates 3 numbers first, because there needs to be one for each block
         var num = getRndInteger(1, 4);

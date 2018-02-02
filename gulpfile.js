@@ -13,7 +13,8 @@ var rename = require('gulp-rename');
 var production = !!gutil.env.production;
 var jsmin = !!gutil.env.jsmin;
 
-var proxyStr = 'http://localhost:8080/all/db1996.github.io/';
+// var proxyStr = 'http://localhost:8080/all/db1996.github.io/';
+var proxyStr = 'http://localhost:8080/all/randomnumber';
 
 // json object to specify folders and files it watches
 var srcs = {
@@ -52,9 +53,7 @@ gulp.task('build-css', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(dests.css))
         .pipe(browserSync.reload({ stream: true }))
-        .pipe(
-            production === true ? rename({ extname: '.min.css' }) : gutil.noop()
-        )
+        .pipe(production === true ? rename({ extname: '.min.css' }) : gutil.noop())
         .pipe(production === true ? cleanCSS({ level: 2 }) : gutil.noop())
         .pipe(gulp.dest(dests.cssmin))
         .pipe(browserSync.reload({ stream: true }));
@@ -70,9 +69,7 @@ gulp.task('build-css-timeout', function() {
         .pipe(wait(2500))
         .pipe(gulp.dest(dests.css))
         .pipe(browserSync.reload({ stream: true }))
-        .pipe(
-            production === true ? rename({ extname: '.min.css' }) : gutil.noop()
-        )
+        .pipe(production === true ? rename({ extname: '.min.css' }) : gutil.noop())
         .pipe(production === true ? cleanCSS({ level: 2 }) : gutil.noop())
         .pipe(gulp.dest(dests.cssmin))
         .pipe(browserSync.reload({ stream: true }));
@@ -90,12 +87,8 @@ gulp.task('build-js', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(dests.js))
         .pipe(browserSync.reload({ stream: true }))
-        .pipe(
-            production === true ? rename({ extname: '.min.js' }) : gutil.noop()
-        )
-        .pipe(
-            production === true ? uglify().on('error', gutil.log) : gutil.noop()
-        )
+        .pipe(production === true ? rename({ extname: '.min.js' }) : gutil.noop())
+        .pipe(production === true ? uglify().on('error', gutil.log) : gutil.noop())
         .pipe(gulp.dest(dests.js))
         .pipe(browserSync.reload({ stream: true }));
 });

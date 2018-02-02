@@ -1,18 +1,99 @@
 .king-dice-group {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     margin-bottom: 15px;
-    height: 220px;
+    transition: 0.2s ease;
+    &--3-item {
+        grid-template-rows: repeat(1, 100px);
+    }
+    &--4-item {
+        grid-template-rows: repeat(1, 100px);
+        @include portrait {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &--5-item {
+        grid-template-rows: repeat(1, 100px);
+        @include landscape {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include portrait {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &--6-item {
+        grid-template-rows: repeat(2, 100px);
+        @include landscape {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include portrait {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &--7-item {
+        grid-template-rows: repeat(2, 100px);
+        @include landscape {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include portrait {
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &--8-item {
+        grid-template-rows: repeat(2, 100px);
+        @include landscape {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include portrait {
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &--9-item {
+        grid-template-rows: repeat(2, 100px);
+        @include landscape {
+            grid-template-rows: repeat(2, 100px);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include portrait {
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
     &__image {
-        height: 100px;
-        margin-bottom: 20px;
+        width: 100px;
         transition: 0.2s ease;
         opacity: 0;
         &--visible {
             opacity: 1;
         }
+        @include custom-down(350px) {
+            width: 70px;
+        }
     }
 }
 .kd-bg {
+    width: 100%;
+    // height: 350px;
+    background-image: url('../img/King-dice-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
     @include custom(1150px, 1450px) {
         width: 80%;
+    }
+    img {
+        width: 100%;
     }
 }
